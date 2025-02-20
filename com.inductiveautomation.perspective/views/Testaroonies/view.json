@@ -293,7 +293,7 @@
           "component": {
             "onActionPerformed": {
               "config": {
-                "script": "\t#self.parent.custom.scaleFactor \u003d 1.0\n\tsystem.perspective.navigate(view \u003d \u0027Popups/Instrument_V2_Flex\u0027, forceReplace \u003d True )\n\t#system.perspective.sendMessage(\u0027resetZoom\u0027)"
+                "script": "\tmessageHandler \u003d \u0027zoomHandler\u0027\n\t#self.parent.custom.scaleFactor \u003d 1.0\n\t#system.perspective.navigate(view \u003d \u0027Popups/Instrument_V2_Flex\u0027, forceReplace \u003d True )\n\t#system.perspective.sendMessage(\u0027resetZoom\u0027)\n\tsystem.perspective.sendMessage(messageHandler, scope\u003d\u0027view\u0027)\n\tsyste.perspective.print(\u0027message sent...\u0027)"
               },
               "scope": "G",
               "type": "script"
@@ -407,6 +407,19 @@
         "overflowY": "hidden",
         "position": "relative"
       }
+    },
+    "scripts": {
+      "customMethods": [],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "zoomHandler",
+          "pageScope": true,
+          "script": "\t# implement your handler here\n\tsystem.perspective.print(\u0027message received\u0027)\n\tsystem.perspective.openPopup(\"myPopupId\",\u0027Popups/Instrument_V2_Flex\u0027, params \u003d {\u0027myParam\u0027:1,\u0027myParam2\u0027:\u0027Test\u0027}, showCloseIcon \u003d False, resizable \u003d True)",
+          "sessionScope": false,
+          "viewScope": true
+        }
+      ]
     },
     "type": "ia.container.coord"
   }
