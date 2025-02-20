@@ -1,0 +1,16 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "config.json"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "katlego",
+      "timestamp": "2025-02-20T15:29:06Z"
+    },
+    "lastModificationSignature": "d7b752f494908b1f2283cccd0b188297f7fef6a495f64fe4ad9d15b056a31106"
+  }
+}

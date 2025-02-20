@@ -1,0 +1,16 @@
+{
+  "scope": "G",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "props.json"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "katlego",
+      "timestamp": "2025-02-20T15:31:00Z"
+    },
+    "lastModificationSignature": "f238345327bcc9ad6cfc7ae570f83a6e4c3ba9d0ba738714745092202580fe7a"
+  }
+}
