@@ -1,0 +1,413 @@
+{
+  "custom": {},
+  "params": {
+    "Area": "Do Not Delete",
+    "MobileView": true,
+    "PlantPrefix": null,
+    "ShortName": null,
+    "TagProvider": "[Potsdam_TagProvider]"
+  },
+  "propConfig": {
+    "params.Area": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.MobileView": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.PlantPrefix": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "0": "{view.params.TagProvider}"
+          },
+          "tagPath": "{0}Other/PlantPrefix"
+        },
+        "type": "tag"
+      },
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.ShortName": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "TagProvider": "{view.params.TagProvider}"
+          },
+          "tagPath": "{TagProvider}Other/ShortNameToggle"
+        },
+        "type": "tag"
+      },
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.TagProvider": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 990,
+      "width": 1660
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 0.0323,
+          "width": 0.1422,
+          "x": 0.4415,
+          "y": 0.4243
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "\"Width : \" + {page.props.dimensions.viewport.width}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "position": {
+          "height": 0.0323,
+          "width": 0.1512,
+          "x": 0.4427,
+          "y": 0.4767
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "\"Height : \" + {page.props.dimensions.viewport.height}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "position": {
+          "height": 0.0323,
+          "width": 0.1422,
+          "x": 0.4416,
+          "y": 0.0848
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "\"Width : \" + {page.props.dimensions.primaryView.width}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "position": {
+          "height": 0.0323,
+          "width": 0.1422,
+          "x": 0.4416,
+          "y": 0.1171
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "\"Height : \" + {page.props.dimensions.primaryView.height}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "position": {
+          "height": 0.0323,
+          "width": 0.1512,
+          "x": 0.4428,
+          "y": 0.3211
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "\"Height : \" + {page.props.dimensions.screen.height}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "position": {
+          "height": 0.0323,
+          "width": 0.1422,
+          "x": 0.4416,
+          "y": 0.2797
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "\"Width : \" + {page.props.dimensions.screen.width}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "position": {
+          "height": 0.0323,
+          "width": 0.1422,
+          "x": 0.2843,
+          "y": 0.0926
+        },
+        "props": {
+          "text": "Primary View"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_6"
+        },
+        "position": {
+          "height": 0.0323,
+          "width": 0.1422,
+          "x": 0.2867,
+          "y": 0.307
+        },
+        "props": {
+          "text": "Screen"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_7"
+        },
+        "position": {
+          "height": 0.0323,
+          "width": 0.1422,
+          "x": 0.2867,
+          "y": 0.4666
+        },
+        "props": {
+          "text": "ViewPort"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tcurrentScale \u003d self.parent.custom.scaleFactor\n\tself.parent.custom.scaleFactor \u003d min(currentScale * 1.5, 10)  # Limit to 10x zoom\n\t\n\tself.props.style.transform \u003d \"scale({}) translate({}px, {}px)\".format(self.custom.scaleFactor, self.custom.translateX, self.custom.translateY)\n\t"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_4"
+        },
+        "position": {
+          "height": 0.0343,
+          "width": 0.1132,
+          "x": 0.3481,
+          "y": 0.6039
+        },
+        "props": {
+          "text": "+"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tcurrentScale \u003d self.parent.custom.scaleFactor\n\tself.parent.custom.scaleFactor \u003d max(currentScale / 1.5, 0.1)  # Limit to 0.1x zoom\n\t\n\tself.props.style.transform \u003d \"scale({}) translate({}px, {}px)\".format(self.custom.scaleFactor, self.custom.translateX, self.custom.translateY)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_5"
+        },
+        "position": {
+          "height": 0.0343,
+          "width": 0.1132,
+          "x": 0.4867,
+          "y": 0.6039
+        },
+        "props": {
+          "text": "-"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\t#self.parent.custom.scaleFactor \u003d 1.0\n\tsystem.perspective.navigate(view \u003d \u0027Popups/Instrument_V2_Flex\u0027, forceReplace \u003d True )\n\t#system.perspective.sendMessage(\u0027resetZoom\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_1"
+        },
+        "position": {
+          "basis": "34px",
+          "height": 0.0343,
+          "width": 0.0482,
+          "x": 0.4505,
+          "y": 0.6737
+        },
+        "props": {
+          "text": "Popup"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "custom": {
+      "isPanning": false,
+      "originX": -72,
+      "originY": -10,
+      "panStartX": 697,
+      "panStartY": 778,
+      "scaleFactor": 1.5,
+      "translateX": -72,
+      "translateY": -10
+    },
+    "events": {
+      "dom": {
+        "onMouseDown": {
+          "config": {
+            "script": "\tself.custom.panStartX \u003d event.clientX\n\tself.custom.panStartY \u003d event.clientY\n\tself.custom.originX \u003d self.custom.translateX\n\tself.custom.originY \u003d self.custom.translateY\n\tself.custom.isPanning \u003d True\n"
+          },
+          "scope": "G",
+          "type": "script"
+        },
+        "onMouseMove": {
+          "config": {
+            "script": "\tif self.custom.isPanning \u003d\u003d True:\n   \t\tdeltaX \u003d event.clientX - self.custom.panStartX\n    \tdeltaY \u003d event.clientY - self.custom.panStartY\n    \tself.custom.translateX \u003d self.custom.originX + deltaX\n    \tself.custom.translateY \u003d self.custom.originY + deltaY\n    \t# Apply the CSS transform to visually move the container\n    \tself.props.style.transform \u003d \"scale({}) translate({}px, {}px)\".format(self.custom.scaleFactor, self.custom.translateX, self.custom.translateY)\n"
+          },
+          "scope": "G",
+          "type": "script"
+        },
+        "onMouseUp": {
+          "config": {
+            "script": "\tself.custom.isPanning \u003d False"
+          },
+          "scope": "G",
+          "type": "script"
+        },
+        "onTouchEnd": {
+          "config": {
+            "script": "\tself.custom.isPanning \u003d False"
+          },
+          "scope": "G",
+          "type": "script"
+        },
+        "onTouchMove": {
+          "config": {
+            "script": "\tif self.custom.isPanning \u003d\u003d True:\n   \t\tdeltaX \u003d event.clientX - self.custom.panStartX\n    \tdeltaY \u003d event.clientY - self.custom.panStartY\n    \tself.custom.translateX \u003d self.custom.originX + deltaX\n    \tself.custom.translateY \u003d self.custom.originY + deltaY\n    \t# Apply the CSS transform to visually move the container\n    \tself.props.style.transform \u003d \"scale({}) translate({}px, {}px)\".format(self.custom.scaleFactor, self.custom.translateX, self.custom.translateY)"
+          },
+          "scope": "G",
+          "type": "script"
+        },
+        "onTouchStart": {
+          "config": {
+            "script": "\tself.custom.panStartX \u003d event.clientX\n\tself.custom.panStartY \u003d event.clientY\n\tself.custom.originX \u003d self.custom.translateX\n\tself.custom.originY \u003d self.custom.translateY\n\tself.custom.isPanning \u003d True"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      },
+      "system": {
+        "onStartup": {
+          "config": {
+            "script": "\tself.session.custom.pageId \u003d self.page.props.primaryView"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "propConfig": {
+      "props.style.transform": {
+        "binding": {
+          "config": {
+            "expression": "\"scale(\" + {this.custom.scaleFactor} + \") translate(\" + {this.custom.translateX} + \"px, \" + {this.custom.translateY} + \"px)\""
+          },
+          "type": "expr"
+        }
+      }
+    },
+    "props": {
+      "aspectRatio": "1660:990",
+      "mode": "percent",
+      "style": {
+        "overflow": "hidden",
+        "overflowX": "hidden",
+        "overflowY": "hidden",
+        "position": "relative"
+      }
+    },
+    "type": "ia.container.coord"
+  }
+}

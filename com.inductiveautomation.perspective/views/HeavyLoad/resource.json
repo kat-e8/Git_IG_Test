@@ -1,16 +1,17 @@
 {
-  "scope": "C",
+  "scope": "G",
   "version": 1,
   "restricted": false,
   "overridable": true,
   "files": [
-    "data.bin"
+    "view.json",
+    "thumbnail.png"
   ],
   "attributes": {
     "lastModification": {
       "actor": "katlego",
       "timestamp": "2025-02-20T16:19:25Z"
     },
-    "lastModificationSignature": "a83b61e7f67d7c2d6471da08365630afdf8ff215db4c8fe6c17683afe1f7c54b"
+    "lastModificationSignature": "bc1578d9eeb7e94c8217df3527ac1982d970d7ff385fef6a9222d9bd049dc292"
   }
 }

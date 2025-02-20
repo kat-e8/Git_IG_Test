@@ -1,7 +1,8 @@
 {
   "pages": {
     "/": {
-      "viewPath": "MyView"
+      "title": "",
+      "viewPath": "Testaroonies"
     }
   },
   "sharedDocks": {

@@ -1,0 +1,47 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "HeavyLoad"
+        },
+        "props": {
+          "path": "HeavyLoad"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Testaroonies"
+        },
+        "position": {
+          "tabIndex": 1
+        },
+        "props": {
+          "params": {
+            "Area": "Do Not Delete",
+            "MobileView": true,
+            "PlantPrefix": null,
+            "ShortName": null,
+            "TagProvider": "[Potsdam_TagProvider]"
+          },
+          "path": "Testaroonies"
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "tabs": [
+        "",
+        "value"
+      ]
+    },
+    "type": "ia.container.tab"
+  }
+}

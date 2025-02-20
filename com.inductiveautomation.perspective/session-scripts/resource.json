@@ -1,5 +1,5 @@
 {
-  "scope": "C",
+  "scope": "G",
   "version": 1,
   "restricted": false,
   "overridable": true,
@@ -11,6 +11,6 @@
       "actor": "katlego",
       "timestamp": "2025-02-20T16:19:25Z"
     },
-    "lastModificationSignature": "a83b61e7f67d7c2d6471da08365630afdf8ff215db4c8fe6c17683afe1f7c54b"
+    "lastModificationSignature": "ec1b291b3ffcf34cc5b4b9096a3c5fe6fe04e14af1c973ce1dd169aba2750628"
   }
 }

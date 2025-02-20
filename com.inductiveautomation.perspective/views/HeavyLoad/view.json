@@ -1,0 +1,272 @@
+{
+  "custom": {},
+  "events": {
+    "system": {
+      "onShutdown": {
+        "config": {
+          "script": "\tself.getChild(\"root\").getChild(\"XYChart\").props.dataSources \u003d []\n\tsystem.perspective.print(\u0027clearedView\u0027)"
+        },
+        "scope": "G",
+        "type": "script"
+      }
+    }
+  },
+  "params": {},
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tx \u003d self.session.custom.x\n\ty \u003d self.session.custom.y\n\tif x \u003d\u003d 0 and y \u003d\u003d 0:\n\t\tsystem.perspective.openPopup(\u0027resize\u0027, \u0027Popups/Resize\u0027, position \u003d {\u0027width\u0027:\u0027100%\u0027, \u0027height\u0027:\u002750%\u0027}, showCloseIcon \u003d True)\n\telse:\n\t\t\t\tsystem.perspective.openPopup(\u0027resize\u0027, \u0027Popups/Resize\u0027, position \u003d {\u0027width\u0027:\u0027100%\u0027, \u0027height\u0027:\u002750%\u0027, \u0027left\u0027:x, \u0027top\u0027:y}, showCloseIcon \u003d True)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "34px"
+        },
+        "props": {
+          "text": "Open Popup"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "LedDisplay"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "path": "session.custom.x"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.display.led-display"
+      },
+      {
+        "meta": {
+          "name": "LedDisplay_0"
+        },
+        "position": {
+          "basis": "32px"
+        },
+        "propConfig": {
+          "props.value": {
+            "binding": {
+              "config": {
+                "path": "session.custom.y"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.display.led-display"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tx \u003d self.session.custom.x\n\ty \u003d self.session.custom.y\n\tif x \u003d\u003d 0 and y \u003d\u003d 0:\n\t\tsystem.perspective.openPopup(\u0027resize\u0027, \u0027Popups/MotorDOL_V2 (1)\u0027, position \u003d {\u0027width\u0027:\u0027100%\u0027, \u0027height\u0027:\u002750%\u0027}, showCloseIcon \u003d True)\n\telse:\n\t\t\t\tsystem.perspective.openPopup(\u0027resize\u0027, \u0027Popups/MotorDOL_V2 (1)\u0027, position \u003d {\u0027width\u0027:\u0027100%\u0027, \u0027height\u0027:\u002750%\u0027, \u0027left\u0027:x, \u0027top\u0027:y}, showCloseIcon \u003d True , viewportBound \u003d True)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_0"
+        },
+        "position": {
+          "basis": "34px"
+        },
+        "props": {
+          "text": "Open Motor Popup"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tsystem.perspective.navigate(view \u003d \u0027Popups/Instrument_V2_Flex\u0027, forceReplace \u003d True )\n\tsystem.perspective.sendMessage(\u0027resetZoom\u0027)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button_1"
+        },
+        "position": {
+          "basis": "34px"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "meta": {
+          "name": "Label_7"
+        },
+        "props": {
+          "text": "ViewPort"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "\"Width : \" + {page.props.dimensions.viewport.width}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_0"
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "\"Height : \" + {page.props.dimensions.viewport.height}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_6"
+        },
+        "props": {
+          "text": "Screen"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_4"
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "\"Width : \" + {page.props.dimensions.screen.width}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_3"
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "\"Height : \" + {page.props.dimensions.screen.height}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_5"
+        },
+        "props": {
+          "text": "Primary View"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_1"
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "\"Width : \" + {page.props.dimensions.primaryView.width}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label_2"
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "\"Height : \" + {page.props.dimensions.primaryView.height}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "events": {
+      "system": {
+        "onShutdown": {
+          "config": {
+            "script": "\tself.getChild(\"XYChart\").props.dataSources \u003d []\n\tsystem.perspective.print(\u0027cleared\u0027)"
+          },
+          "scope": "G",
+          "type": "script"
+        },
+        "onStartup": {
+          "config": {
+            "script": "\tself.session.custom.pageId \u003d self.page.props.primaryView"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}
