@@ -9,7 +9,7 @@
           "component": {
             "onActionPerformed": {
               "config": {
-                "script": "\tsystem.perspective.sendMessage(\u0027specific_message\u0027)\n\tsystem.perspective.print(\"running\")"
+                "script": "\thandler \u003d \u0027handler\u0027\n\tcurrentTime \u003d system.date.format(system.date.now(), \u0027HH:mm:ss\u0027)\n\tpayload \u003d {\u0027time\u0027: currentTime}\n\tsystem.perspective.sendMessage(handler, payload, scope\u003d\u0027view\u0027)\n\tsystem.perspective.print(\u0027sending...\u0027)"
               },
               "scope": "G",
               "type": "script"
@@ -38,18 +38,18 @@
           "y": 236.97862075805665
         },
         "props": {
-          "text": "Label"
+          "text": "18:16:44"
         },
         "scripts": {
           "customMethods": [],
           "extensionFunctions": null,
           "messageHandlers": [
             {
-              "messageType": "specific_message",
-              "pageScope": true,
-              "script": "\t# implement your handler here\n\tself.props.text \u003d \"Hello World!\"\n\tsystem.perspective.print(\u0027message received\u0027)",
+              "messageType": "handler",
+              "pageScope": false,
+              "script": "\t# implement your handler here\n\tself.props.text \u003d payload[\u0027time\u0027]\n\tsystem.perspective.print(\u0027message received\u0027)",
               "sessionScope": false,
-              "viewScope": false
+              "viewScope": true
             }
           ]
         },
