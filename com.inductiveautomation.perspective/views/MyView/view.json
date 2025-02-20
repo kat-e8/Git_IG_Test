@@ -5,6 +5,17 @@
   "root": {
     "children": [
       {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tsystem.perspective.sendMessage(\u0027specific_message\u0027)\n\tsystem.perspective.print(\"running\")"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
         "meta": {
           "name": "Button"
         },
@@ -23,11 +34,24 @@
         "position": {
           "height": 30,
           "width": 61,
-          "x": 349.99,
-          "y": 236.99
+          "x": 211.99,
+          "y": 236.97862075805665
         },
         "props": {
           "text": "Label"
+        },
+        "scripts": {
+          "customMethods": [],
+          "extensionFunctions": null,
+          "messageHandlers": [
+            {
+              "messageType": "specific_message",
+              "pageScope": true,
+              "script": "\t# implement your handler here\n\tself.props.text \u003d \"Hello World!\"\n\tsystem.perspective.print(\u0027message received\u0027)",
+              "sessionScope": false,
+              "viewScope": false
+            }
+          ]
         },
         "type": "ia.display.label"
       }
