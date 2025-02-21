@@ -1,0 +1,41 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "height": 32,
+          "width": 50,
+          "x": 318,
+          "y": 245
+        },
+        "props": {
+          "text": "Label"
+        },
+        "scripts": {
+          "customMethods": [],
+          "extensionFunctions": null,
+          "messageHandlers": [
+            {
+              "messageType": "handler",
+              "pageScope": true,
+              "script": "\t# implement your handler here\n\tsystem.perspective.print(\u0027foreign message...\u0027)\n\tself.props.text \u003d payload[\u0027time\u0027]",
+              "sessionScope": true,
+              "viewScope": true
+            }
+          ]
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.coord"
+  }
+}
